@@ -1,0 +1,6 @@
+framework module Pods_IcePic_StoryboardTests {
+  umbrella header "Pods-IcePic_StoryboardTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

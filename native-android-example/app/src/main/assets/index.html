@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title></title>
+</head>
+
+<body style="background-color: #f8f8f8;font-family: 'Helvetica';margin: 0; overflow: auto;  float: left; width: 100%">
+
+<div style="max-width:500px;display: block;margin: 30px auto;width: 100%;  padding: 60px 40px; color: #76838f;  font-size: 14px; background-color: #000;border-radius: 6px; ">
+
+    <!-- title -->
+    <div style="font-size: 24px;font-weight: 600;color: #9d1f2b; text-align: left;font-weight: bold;display: table;border-bottom: 2px solid rgb(255 255 255 / 34%);margin-bottom: 10px;padding-bottom: 20px;width: 100%;">
+        <span style="display: table-cell;    vertical-align: middle;font-size: 28px;">Card Successfully Added</span>
+    </div>
+    <!-- title End-->
+
+
+    <!-- content-->
+
+    <div style="margin-bottom: 40px;margin-top: 40px;border-bottom: 1px solid #ccc;padding-bottom: 20px;">
+        {{-- <p style="color: #eee;line-height: 23px;font-size: 18px;margin-bottom: 0">
+        Payment Token
+    </p>
+        <h5 style="color: #fff;font-size: 18px;margin-top: 8px">XYZ</h5> --}}
+        <p style="color: #eee;line-height: 23px;font-size: 18px;">
+            Card Number
+        </p>
+        <h5 style="color: #fff;font-size: 18px;margin-top: 8px">123</h5>
+        {{-- <p style="color: #eee;line-height: 23px;font-size: 18px;margin-bottom: 0">
+        Reference
+    </p>
+        <h5 style="color: #fff;font-size: 18px;margin-top: 8px">00000000003</h5> --}}
+
+    </div>
+
+    <!-- content End-->
+    <form method="post" name="refer_now_form">
+        <div class="refer-now-button" style="cursor: pointer" id="yourButtonId2">
+            <a href="{{route('create.successfull')}}" onclick="refer_now.performClick();" id="refernow" style="background: #9d1f2b;color: #fff;display: block;text-align: center;font-weight: bold;text-transform: uppercase;text-decoration: none;height: 50px;line-height: 50px;font-size: 18px;">Back To App</a>
+        </div>
+    </form>
+    <input type="button" id="yourButtonId" value="My button" onclick="postAppMessage();" />
+</div> <!-- end -->
+
+</body>
+<script>
+
+            function pf() {
+               const flutter = window.mobile_inappwebview;
+               if (flutter) {
+                 flutter.postMessage(JSON.stringify({ loaded: true }));
+               }
+            }
+        function postAppMessage() {
+                if (window.webkit != undefined) {
+                    if (window.webkit.messageHandlers.mobile_inappwebview != undefined) {
+                        window.webkit.messageHandlers.mobile_inappwebview.postMessage(JSON.stringify({ loaded: true }))
+                    }
+                }
+                if (window.mobile_inappwebview != undefined) {
+                    window.mobile_inappwebview.postMessage(JSON.stringify({ loaded: true }))
+                }
+            }
+    </script>
+<script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+</html>

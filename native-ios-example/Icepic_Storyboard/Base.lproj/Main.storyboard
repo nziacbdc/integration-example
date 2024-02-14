@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D28-1f-hK3">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KjI-1Q-NSo">
+            <objects>
+                <navigationController storyboardIdentifier="navigationController" id="D28-1f-hK3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UKz-s3-9G5">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZjZ-4e-wYu" kind="relationship" relationship="rootViewController" id="oKB-8l-yit"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0b-ck-Ftx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="4"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Lc-ff-ebj">
+            <objects>
+                <viewController storyboardIdentifier="firstVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZjZ-4e-wYu" customClass="ViewController" customModule="IcePic_Storyboard" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ibL-Pq-lDx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="icePicLabel" text="IOS Swift Demo IcePic Integration" textAlignment="center" lineBreakMode="tailTruncation" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08N-n1-hzD">
+                                <rect key="frame" x="68.666666666666686" y="450" width="256" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="icePicLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="icePicWVButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31f-NP-PtK">
+                                <rect key="frame" x="124.33333333333333" y="477.66666666666669" width="144.66666666666669" height="37.000000000000057"/>
+                                <accessibility key="accessibilityConfiguration" identifier="icePicWVButton"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="IcePic WebView"/>
+                                <connections>
+                                    <action selector="generateAuthenticationToken:" destination="ZjZ-4e-wYu" eventType="touchUpInside" id="Xj8-7U-Gj3"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="TAh-yb-f47">
+                                <rect key="frame" x="186.66666666666666" y="450.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="moV-VK-wd1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="31f-NP-PtK" firstAttribute="centerX" secondItem="moV-VK-wd1" secondAttribute="centerX" id="0i3-rs-5Tp"/>
+                            <constraint firstItem="TAh-yb-f47" firstAttribute="centerY" secondItem="moV-VK-wd1" secondAttribute="centerY" id="7aD-UY-zr8"/>
+                            <constraint firstItem="08N-n1-hzD" firstAttribute="centerY" secondItem="moV-VK-wd1" secondAttribute="centerY" id="E8O-23-VC7"/>
+                            <constraint firstItem="TAh-yb-f47" firstAttribute="centerX" secondItem="moV-VK-wd1" secondAttribute="centerX" id="JKG-Ce-Wwf"/>
+                            <constraint firstItem="08N-n1-hzD" firstAttribute="centerX" secondItem="moV-VK-wd1" secondAttribute="centerX" id="VHH-fw-RRL"/>
+                            <constraint firstItem="31f-NP-PtK" firstAttribute="firstBaseline" secondItem="08N-n1-hzD" secondAttribute="baseline" constant="35" symbolType="layoutAnchor" id="h5r-Pg-K15"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pLL-PA-84r"/>
+                    <connections>
+                        <outlet property="icePicLabel" destination="08N-n1-hzD" id="ZaC-Gx-9Px"/>
+                        <outlet property="icePicWVButton" destination="31f-NP-PtK" id="0wo-K3-T9I"/>
+                        <outlet property="progressIndicator" destination="TAh-yb-f47" id="3Jc-ME-111"/>
+                        <segue destination="m9Y-PX-1Dt" kind="show" identifier="firstSegue" id="0wc-Bi-0Q7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLr-6p-HSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="6"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="cSJ-1E-oqO">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="m9Y-PX-1Dt" customClass="SecondViewController" customModule="IcePic_Storyboard" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GdD-39-iMO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="icePicLabel2" text="IOS Swift Demo IcePic Integration" textAlignment="center" lineBreakMode="tailTruncation" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47t-2V-NbH">
+                                <rect key="frame" x="68.666666666666686" y="450" width="256" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="icePicWVButton2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOe-aR-IhY">
+                                <rect key="frame" x="124.33333333333333" y="477.66666666666669" width="144.66666666666669" height="37.000000000000057"/>
+                                <accessibility key="accessibilityConfiguration" identifier="icePicWVButton2"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="IcePic WebView"/>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="progressIndicator" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="A4y-c8-mdP">
+                                <rect key="frame" x="186.66666666666666" y="450.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DLK-Sz-FDd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A4y-c8-mdP" firstAttribute="centerY" secondItem="DLK-Sz-FDd" secondAttribute="centerY" id="41F-vG-JVz"/>
+                            <constraint firstItem="47t-2V-NbH" firstAttribute="centerY" secondItem="DLK-Sz-FDd" secondAttribute="centerY" id="RcI-co-Kb5"/>
+                            <constraint firstItem="oOe-aR-IhY" firstAttribute="firstBaseline" secondItem="47t-2V-NbH" secondAttribute="baseline" constant="35" symbolType="layoutAnchor" id="gof-e7-HG4"/>
+                            <constraint firstItem="47t-2V-NbH" firstAttribute="centerX" secondItem="DLK-Sz-FDd" secondAttribute="centerX" id="k50-1C-MSD"/>
+                            <constraint firstItem="A4y-c8-mdP" firstAttribute="centerX" secondItem="DLK-Sz-FDd" secondAttribute="centerX" id="kdC-g2-Gb1"/>
+                            <constraint firstItem="oOe-aR-IhY" firstAttribute="centerX" secondItem="DLK-Sz-FDd" secondAttribute="centerX" id="xEX-qM-gVz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gLQ-lp-fWZ"/>
+                    <connections>
+                        <outlet property="icePicLabel" destination="47t-2V-NbH" id="3D9-XE-iqK"/>
+                        <outlet property="icePicWVButton" destination="oOe-aR-IhY" id="Nf1-JH-zab"/>
+                        <outlet property="progressIndicator" destination="A4y-c8-mdP" id="ngH-Qt-Wkp"/>
+                        <segue destination="KQt-cq-CMz" kind="show" identifier="secondSegue" id="XES-as-8Db"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XC7-q5-ICB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="4"/>
+        </scene>
+        <!--Complete View Controller-->
+        <scene sceneID="td3-RO-YOg">
+            <objects>
+                <viewController storyboardIdentifier="CompleteViewController" id="cKx-QL-Jqo" customClass="CompleteViewController" customModule="IcePic_Storyboard" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="progressIndicator" id="ehj-br-y9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-Df-3tI">
+                                <rect key="frame" x="100" y="508.66666666666674" width="193" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="COMPLETE"/>
+                                <connections>
+                                    <action selector="completeIcePicProcess:" destination="cKx-QL-Jqo" eventType="touchUpInside" id="VRE-Gw-EGO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atY-L9-0bh">
+                                <rect key="frame" x="196.66666666666666" y="460.66666666666669" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Biw-ld-wjP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="atY-L9-0bh" firstAttribute="centerX" secondItem="Biw-ld-wjP" secondAttribute="centerX" id="7XI-7G-rlH"/>
+                            <constraint firstItem="Biw-ld-wjP" firstAttribute="trailing" secondItem="UvO-Df-3tI" secondAttribute="trailing" constant="100" id="E5D-8a-pZO"/>
+                            <constraint firstItem="atY-L9-0bh" firstAttribute="centerY" secondItem="Biw-ld-wjP" secondAttribute="centerY" id="RHf-hp-utX"/>
+                            <constraint firstItem="UvO-Df-3tI" firstAttribute="top" secondItem="atY-L9-0bh" secondAttribute="bottom" constant="48" id="f99-Gh-mdm"/>
+                            <constraint firstItem="UvO-Df-3tI" firstAttribute="leading" secondItem="Biw-ld-wjP" secondAttribute="leading" constant="100" id="fsT-Du-r7S"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MQz-2S-3hO"/>
+                    <connections>
+                        <outlet property="completeBt" destination="UvO-Df-3tI" id="XyI-2U-0dA"/>
+                        <outlet property="regDeviceResLbl" destination="atY-L9-0bh" id="js3-So-sid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vg8-Dr-WAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4116.7938931297713" y="3.5211267605633805"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="Dhf-us-yRR">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewController" id="KQt-cq-CMz" customClass="ThirdViewController" customModule="IcePic_Storyboard" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ZV-Yc-f7J">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-e6-OqA">
+                                <rect key="frame" x="0.0" y="103" width="393" height="655"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mu-ws-K5p">
+                                        <rect key="frame" x="171.66666666666666" y="0.0" width="50" height="163.66666666666666"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="WMd-8J-btB"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="pairCardResLbl" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLG-dm-VPC">
+                                        <rect key="frame" x="142" y="163.66666666666669" width="109.33333333333331" height="164"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="progressIndicator" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="X8B-nR-GKm">
+                                        <rect key="frame" x="186.66666666666666" y="327.66666666666669" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbs-hD-EB4">
+                                        <rect key="frame" x="142" y="347.66666666666674" width="109.33333333333331" height="307.33333333333326"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CONTINUE" titleAlignment="center"/>
+                                        <connections>
+                                            <action selector="registerAndContinue:" destination="KQt-cq-CMz" eventType="touchUpInside" id="vr3-cZ-kM3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d8k-Ia-GWC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d8k-Ia-GWC" firstAttribute="trailing" secondItem="Zba-e6-OqA" secondAttribute="trailing" id="GJw-8q-rLA"/>
+                            <constraint firstItem="Zba-e6-OqA" firstAttribute="leading" secondItem="d8k-Ia-GWC" secondAttribute="leading" id="JFv-ho-1d2"/>
+                            <constraint firstItem="Zba-e6-OqA" firstAttribute="top" secondItem="d8k-Ia-GWC" secondAttribute="top" id="YWz-lW-d9D"/>
+                            <constraint firstItem="d8k-Ia-GWC" firstAttribute="bottom" secondItem="Zba-e6-OqA" secondAttribute="bottom" constant="60" id="mKA-IZ-weV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Qf-dd-Wfa"/>
+                    <connections>
+                        <outlet property="circularProgress" destination="X8B-nR-GKm" id="Yqe-rT-j3s"/>
+                        <outlet property="continueRegBt" destination="8Mu-ws-K5p" id="fS5-Wq-RZF"/>
+                        <outlet property="pairCardResLbl" destination="HLG-dm-VPC" id="PV9-tw-VLf"/>
+                        <outlet property="picassoHashWV" destination="8Mu-ws-K5p" id="6tK-QQ-2eU"/>
+                        <segue destination="cKx-QL-Jqo" kind="show" identifier="completeSegue" id="1VX-Tc-Avi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Atw-Ee-aBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3090.8396946564885" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
