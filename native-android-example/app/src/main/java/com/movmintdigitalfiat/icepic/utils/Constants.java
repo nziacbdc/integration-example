@@ -12,7 +12,7 @@ public class Constants {
     public static String sandDollarSecret = "lig4Ye3cKWeyJiL1mnvmQTXhsomJCKyTGufbfCSjpTs=";
 
     public static String baseUrl = "https://api.testdollar.app";
-    public static String baseUrlIce = "https://icepic-api.sandurchin.app";
+    public static String baseUrlIce = "https://icepic-api.testdollar.app";
     public static String webViewUrl = "https://icepic.testdollar.app";
     public static String publicKey = "-----BEGIN PUBLIC KEY-----\n" +
             "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAjdc1/do+ZTxkFCN1SKV1\n" +
