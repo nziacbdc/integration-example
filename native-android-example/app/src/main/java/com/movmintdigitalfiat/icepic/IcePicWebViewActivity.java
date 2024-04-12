@@ -43,8 +43,9 @@ public class IcePicWebViewActivity extends Activity {
         // Now there is some Javascript to execute within the initialized WebView
         // To do that we can create a custom interface class to keep the code clean and initialize custom class object to addJavascriptInterface()
         // addJavascriptInterface() expects two arguments, 1st is the custom interface class created and the interface name.
-        // This interface name have to be "flutter_inappwebview" which is provided by MovMint dev team
-        icePicWebView.addJavascriptInterface(new WebAppInterface(this, icePicWebView, icePicToken), "inappwebview");
+        // This interface name have to be "inappwebview" which is provided by MovMint dev team
+        icePicWebView.addJavascriptInterface(new WebAppInterface(this, icePicWebView, icePicToken,
+                Constants.icePicApiKey), "inappwebview");
 
     }
 }
