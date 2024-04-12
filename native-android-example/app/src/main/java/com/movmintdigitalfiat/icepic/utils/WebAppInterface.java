@@ -34,14 +34,16 @@ public class WebAppInterface {
     Context mContext;
     WebView icePicWebView;
     String icePicToken;
+    String icePicApiKey;
 
     OkHttpClient client = new OkHttpClient();
     Gson gson = new Gson();
 
-    public WebAppInterface(Context c, WebView webView, String icePicToken) {
+    public WebAppInterface(Context c, WebView webView, String icePicToken, String icePicApiKey) {
         mContext = c;
         icePicWebView = webView;
         this.icePicToken = icePicToken;
+        this.icePicApiKey = icePicApiKey;
     }
 
     // This method signature and the annotation is required
@@ -69,7 +71,7 @@ public class WebAppInterface {
                 // Use the Android WebView available method `evaluateJavascript()` to run the JS code snippet
                 // Send the `icepicToken` using the Web API window.postMessage()
                 // Expected argument should be in this format: {"icepicToken": "<your token>", "apikeyid": "<your api key id>"}
-                String jsonString = String.format("{\"icepicToken\": \"%s\", \"apikeyid\":\"%s\"}", icePicToken, Constants.icePicApiKey);
+                String jsonString = String.format("{\"icepicToken\": \"%s\", \"apikeyid\":\"%s\"}", icePicToken, icePicApiKey);
                 String workerJs = String.format("window.postMessage(%s);", jsonString);
                 icePicWebView.evaluateJavascript(workerJs, null);
             });
